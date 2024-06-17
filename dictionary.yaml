@@ -1,0 +1,45 @@
+#Dictionary
+CRIXX:
+  SpecifiedDemand: {
+    AGRELC:['E5AGRELE'],
+    AGRDSL:['E5AGRDSL'],
+    COMELC:['E5PUBELE','E5COMELE'],
+    COMLPG:['E5COMLPG'],
+    RESELC:['E5RESELE'],
+    RESLPG:['E5RESLPG'],
+    }
+    #SectorFuel: ['NAME']
+  OLADE: ['TRNLPG', 'TRNDSL', 'TRNGSL', 'TRNKER', 'AGRGSL', 'AGRKER', 'AGRDSL']
+  PowerPlants: {
+    HYD:['PPHROR','PPHDAM'],
+    GEO:['PPGEO'],
+    DSL:['PPDSL'],
+    BIO:['PPBIO'],
+    SPV:['PPPVT',PPVTHYD','PPPVTS','PPPVD',' PPPVDS'],
+    WON:['PPWNDON'],
+    }
+  SupplyTechs: {
+    DSL:['DIST_DSL'],
+    LPG:['DIST_LPG'],
+    }
+  dayparts:
+    D1: [0, 24]
+    #daypart : [start_hour (inclusive), end_hour (exclusive)]
+  seasons:
+    S1: [1, 12]
+    #season : [month 1, month 2, ...] (all inclusive)
+ECUXX:
+  SpecifiedDemand: {
+    }
+    #SectorFuel: ['NAME']
+  OLADE: [ ]
+  PowerPlants: {
+    }
+  SupplyTechs: {  
+    }
+  dayparts:
+    D1: []
+    #daypart : [start_hour (inclusive), end_hour (exclusive)]
+  seasons:
+    S1: []
+    #season : [month 1, month 2, ...] (all inclusive)
