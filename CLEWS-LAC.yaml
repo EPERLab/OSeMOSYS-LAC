@@ -52,8 +52,8 @@ OutputFormat: append_otoole
 OperationModes: 'optn_mds.txt'
 OperationModesOut: 'data-out/optn_mds.txt'
 otooleOutputDirectory: 'data-out'
-DataDirectoryName: '/Users/javiermonge/osemosys_global/results/CRI/data'
-OsemosysGlobalPath: '/Users/javiermonge/osemosys_global/results/CRI/data'
+DataDirectoryName: '/Users/javiermonge/osemosys_global/results/05222025/data'
+OsemosysGlobalPath: '/Users/javiermonge/osemosys_global/results/05222025/data'
 ClusterBaseFileName: clustering_results_
 PrecipitationClusterBaseFileName: clustering_results_prc_
 EvapotranspirationClusterBaseFileName: clustering_results_evt_
@@ -62,8 +62,6 @@ IrrigationWaterDeficitClusterBaseFileName: clustering_results_cwd_
 # Model Time Space parameters: Years, Land, Regions,... TimeSlices
 ################################################################
 Years:
-  - 2020
-  - 2021
   - 2022
   - 2023
   - 2024
@@ -83,10 +81,20 @@ Years:
   - 2038
   - 2039
   - 2040
+  - 2041
+  - 2042
+  - 2043
+  - 2044
+  - 2045
+  - 2046
+  - 2047
+  - 2048
+  - 2049
+  - 2050
 
 LandRegions:
-  - 'CRI'
-
+  - "COL"
+  - "ECU"
 
 LandToGridMap: {
   
@@ -152,11 +160,13 @@ GroundwaterPercentofExcess: 0.051
 # Model Energy parameters: Fuels, Transformation Tech,...
 ################################################################
 EndUseFuels: {
-  AGR: ['ELC','DSL'],
-  COM: ['ELC','LPG'],
-  RES: ['ELC','LPG'],
+  AGR: ['COA','DSL','ELC','FOI','GSL','LPG','NGS'],
+  COM: ['COA','DSL','ELC','FOI','GSL','JFU','LPG','NGS'],
+  IND: ['BAG','COA','COK','DSL','ELC','FOI','GSL','JFU','LPG','NGS','PET'],
+  OTH: ['COA','DSL','ELC','FOI','GSL','JFU','LPG','NGS'],
+  RES: ['COA','ELC','JFU','LPG','NGS'],
+  TRA: ['DSL','ELC','FOI','GSL','JFU','LPG','NGS'],
 }
-
 
 ImportFuels: [ ]
 
@@ -190,7 +200,9 @@ TransformationTechnologies: [
 
 # Power Plants: #Data from osemosys_global
 PowerPlants: {
-   PWRDSL: ['Diesel power plant', '0.88', 'MIN'],
+   PWRDSL: ['Diesel power plant', '1', 'MIN'],
+   PWRNGS: ['Natural gas power plant', '1', 'MIN'],
+   PWRFOI: ['Heavy fuel oil power plant', '1', 'MIN'],
 }
 
 Emissions: {

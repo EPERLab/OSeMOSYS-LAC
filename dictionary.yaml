@@ -1,45 +1,232 @@
 #Dictionary
-CRIXX:
-  SpecifiedDemand: {
-    AGRELC:['E5AGRELE'],
-    AGRDSL:['E5AGRDSL'],
-    COMELC:['E5PUBELE','E5COMELE'],
-    COMLPG:['E5COMLPG'],
-    RESELC:['E5RESELE'],
-    RESLPG:['E5RESLPG'],
-    }
-    #SectorFuel: ['NAME']
-  OLADE: ['TRNLPG', 'TRNDSL', 'TRNGSL', 'TRNKER', 'AGRGSL', 'AGRKER', 'AGRDSL']
-  PowerPlants: {
-    HYD:['PPHROR','PPHDAM'],
-    GEO:['PPGEO'],
-    DSL:['PPDSL'],
-    BIO:['PPBIO'],
-    SPV:['PPPVT',PPVTHYD','PPPVTS','PPPVD',' PPPVDS'],
-    WON:['PPWNDON'],
-    }
-  SupplyTechs: {
-    DSL:['DIST_DSL'],
-    LPG:['DIST_LPG'],
-    }
-  dayparts:
-    D1: [0, 24]
-    #daypart : [start_hour (inclusive), end_hour (exclusive)]
-  seasons:
-    S1: [1, 12]
-    #season : [month 1, month 2, ...] (all inclusive)
 ECUXX:
-  SpecifiedDemand: {
-    }
-    #SectorFuel: ['NAME']
-  OLADE: [ ]
+  SpecifiedDemand: 
+    - AGRCOA
+    - AGRDSL
+    - AGRELC
+    - AGRFOI
+    - AGRGSL
+    - AGRLPG
+    - AGRNGS
+    - COMCOA
+    - COMDSL
+    - COMELC
+    - COMFOI
+    - COMGSL
+    - COMJFU
+    - COMLPG
+    - COMNGS
+    - INDBAG
+    - INDCOA
+    - INDCOK
+    - INDDSL
+    - INDELC
+    - INDFOI
+    - INDGSL
+    - INDJFU
+    - INDLPG
+    - INDNGS
+    - INDPET
+    - OTHCOA
+    - OTHDSL
+    - OTHELC
+    - OTHFOI
+    - OTHGSL
+    - OTHJFU
+    - OTHLPG
+    - OTHNGS
+    - RESCOA
+    - RESELC
+    - RESJFU
+    - RESLPG
+    - RESNGS
+    - TRADSL
+    - TRAELC
+    - TRAFOI
+    - TRAGSL
+    - TRAJFU
+    - TRALPG
+    - TRANGS
+    
   PowerPlants: {
+    HYD: ['PPIHYDAMACEM', 'PPIHYDAMAELR', 'PPIHYDPACCEM', 'PPIHYDPACELR', 'PP_HYDAMADAMLAR', 'PP_HYDAMADAMMED', 
+    'PP_HYDAMADAMSMA', 'PP_HYDAMARORLAR', 'PP_HYDAMARORMED', 'PP_HYDAMARORSMA', 'PP_HYDPACDAMLAR', 'PP_HYDPACDAMMED', 'PP_HYDPACDAMSMA', 
+    'PP_HYDPACRORLAR', 'PP_HYDPACRORMED', 'PP_HYDPACRORSMA'],
+    GEO: ['PP_GEO'],
+    SPV: ['PPISPVELR', 'PPISPVGAL', 'PP_SPV_DG', 'PP_SPV_US', 'PP_SPV_US_H2'],
+    WON: ['PPIWNDGAL', 'PP_WND_OF', 'PP_WND_OF_H2', 'PP_WND_US', 'PP_WND_US_H2'],
+    COA: ['PP_COA'],
+    NGS: ['PPINGSPETICE', 'PPINGSPETTGS', 'PPINGSPETTST', 'PP_NGSTGS'],
+    PET: ['PPICRUPETICE', 'PPICRUPETTST', 'PP_CRU'],
+    DSL: ['PPIDSLCEMTST', 'PPIDSLELRICE', 'PPIDSLELRTST', 'PPIDSLGALICE', 'PPIDSLPETICE', 'PPIDSLPETTGS','PP_DSLICE', 'PP_DSLTGS'],
+    BIO: ['PP_BMSTST', 'PPSUG', 'PP_BGSICE'],
+    WAS: ['PP_WASICE'],
+    FOI: ['PPIFOIPETICE', 'PP_FOIICE', 'PP_FOITST'],
+    "CHP: ['PP_CHP'],
+    TPP: ['PP_TPP'],
+    "
     }
+  FinalTechs: {
+    AGRELC: ['T5ELEAGR'],
+    AGRLPG: ['T5LPGAGR'],
+    AGRGSL: ['T5PURGSLAGR'],
+    COMELC: ['T5ELECON'], 
+    COMLPG: ['T5LPGCON'],
+    COMDSL: ['T5PURDSLCON'],
+    COMGSL: ['T5PURGSLCON'],
+    OTHELC: ['T5ELECOM'],
+    OTHFOI: ['T5FOICOM'],
+    OTHLPG: ['T5LPGCOM'],
+    OTHDSL: ['T5PURDSLCOM'],
+    OTHGSL: ['T5PURGSLCOM'],
+    INDCOK: ['T5COKIND'],
+    INDELC: ['T5ELEIND'],
+    INDFOI: ['T5FOIIND'],
+    INDHYD: ['T5HYDIND'],
+    INDLPG: ['T5LPGIND'],
+    INDNGS: ['T5NGSIND'],
+    INDDSL: ['T5PURDSLIND'],
+    INDGSL: ['T5PURGSLIND'],
+    INDBIO: ['T5SUGIND'],
+    RESELC: ['T5ELERES'],
+    RESLPG: ['T5LPGRES'],
+    RESNGS: ['T5NGSRES'],
+    TRAELC: ['T5ELECRUTRN'],
+    TRAGSL: ['T5GSLCRUTRN', 'T5PURGSLAERTRN', 'T5PURGSLSHITRN'],
+    TRALPG: ['T5LPGCRUTRN'],
+    TRAFOI: ['T5FOISHITRN'],
+    TRADSL: ['T5PURDSLSHITRN'],
+  }
   SupplyTechs: {  
+    COA: ['IMPCOA'],
+    COK: ['IMPCOK'],
+    WAS: ['PROWAS'],
     }
+  Refineries: ['REFCRU', 'REFCRUDSL', 'REFCRUGSL', 'REFCRULPG', 'REFCRUFOI', 'REFCRUKJF', 'REFCRUCOK', 'REFCRURED', 'REFNONENE']
   dayparts:
     D1: []
     #daypart : [start_hour (inclusive), end_hour (exclusive)]
   seasons:
     S1: []
+    #season : [month 1, month 2, ...] (all inclusive)
+COLXX:
+  SpecifiedDemand: 
+    - AGRCOA
+    - AGRDSL
+    - AGRELC
+    - AGRFOI
+    - AGRGSL
+    - AGRLPG
+    - AGRNGS
+    - COMCOA
+    - COMDSL
+    - COMELC
+    - COMFOI
+    - COMGSL
+    - COMJFU
+    - COMLPG
+    - COMNGS
+    - INDBAG
+    - INDCOA
+    - INDCOK
+    - INDDSL
+    - INDELC
+    - INDFOI
+    - INDGSL
+    - INDJFU
+    - INDLPG
+    - INDNGS
+    - INDPET
+    - OTHCOA
+    - OTHDSL
+    - OTHELC
+    - OTHFOI
+    - OTHGSL
+    - OTHJFU
+    - OTHLPG
+    - OTHNGS
+    - RESCOA
+    - RESELC
+    - RESJFU
+    - RESLPG
+    - RESNGS
+    - TRADSL
+    - TRAELC
+    - TRAFOI
+    - TRAGSL
+    - TRAJFU
+    - TRALPG
+    - TRANGS
+  #SectorFuel: ['NAME']
+  PowerPlants: {
+    HYD: ['PWRDAM', 'PWRROR', 'PWRRST'],
+    GEO: ['PWRGEO'],
+    #WOF: ['PWRWOO', 'PWRWOOCCS'],
+    SPV: ['PWRSOL', 'PWRSOLBAT', 'PWRMCG', 'PWRRTP'],
+    CSP: ['PWRCSP'],
+    WON: ['PWRONW'],
+    WOF: ['PWRWOF'],
+    COA: ['PWRCOA', 'PWRCOACCS'],
+    NGS: ['PWRNGS', 'PWRNGSCCS'],
+    BIO: ['PWRAFR', 'PWRAFRCCS'], 
+    DSL: ['PWRDST', 'PWRSTD']
+    }
+  FinalTechs: {
+    INDBAG: ['BAGFUR', 'BAGFURCCS', 'BAGBOI', 'BAGBOICCS'],
+    INDCOA: ['COAFUR', 'COAFURCCS', 'COABOI', 'COABOICCS'],
+    INDNGS: ['NGSFUR', 'NGSFURCCS', 'NGSBOI002', 'NGSBOI', 'NGSBOICCS'],
+    INDELC: ['ELCFUR', 'ELCBOI', 'ELCBOI002'], 
+    RESNGS: ['NGSSTV', 'NGSSTV002', 'NGSTEC', 'NGSWHT'],
+    RESELC: ['ELCSTV', 'ELCSTV002', 'ELCTEC', 'ELCWHT', 'REFLOW', 'REFHIG', 'REFLOW002', 'REFHIG002', 'ILULOW', 'ILUHIG', 
+    'ILULOW002', 'ILUHIG002', 'AIRLOW', 'AIRHIG', 'AIRLOW002', 'AIRHIG002', 'TVULOW', 'TVUHIG', 'WSHLOW', 'WSHHIG', 'FANLOW', 'FANHIG'],
+    RESLPG: ['LPGSTV', 'LPGSTV002', 'LPGTEC'],
+    TRAGSL: ['GSLLDV', 'GSLFWD', 'GSLMOT', 'GSLTAX', 'GSLMIC', 'GSLBUS', 'GSLTCK', 'GSLSTT'],
+    TRADSL: ['DSLLDV', 'DSLFWD', 'DSLMOT', 'DSLTAX', 'DSLMIC', 'DSLBUS', 'DSLTCK', 'DSLSTT', 'DSLSHP'],
+    TRANGS: ['NGSLDV', 'NGSFWD', 'NGSMOT', 'NGSTAX', 'NGSMIC', 'NGSBUS', 'NGSTCK', 'NGSSTT'], 
+    TRAELC: ['ELCLDV', 'ELCFWD', 'ELCMOT', 'ELCTAX', 'ELCMIC', 'ELCBUS', 'ELCTCK', 'ELCSTT', 'ELCMET'],
+    TRAJFU: ['JETAIR']
+  }
+  SupplyTechs: {  
+    COA: ['MINCOA'],
+    NGS: ['MINNGS'],
+    BAG: ['MINBAG'], 
+    DSL: ['IMPDSL'],
+    LPG: ['IMPLPG'],
+    GSL: ['IMPGSL']
+    }
+  Refineries: ['UPSREF', 'UPSLPG', 'UPSDET', 'UPSBDL', 'UPSSMR', 'UPSSMRCCS', 'UPSALK', 'UPSPEM', 'UPSREG', 'UPSBGB', 'UPSBDB']
+  dayparts:
+    D1: []
+    #daypart : [start_hour (inclusive), end_hour (exclusive)]
+  seasons:
+    S1: []
+    #season : [month 1, month 2, ...] (all inclusive)
+#PERXX:
+  #SectorFuel: ['NAME']
+  #PowerPlants: {
+    #DSL: ['G_PGDS_02', 'G_PGDV_02'],
+    #COA: ['E_CARB_01', 'E_CARB_02'],
+    #NGS: ['F_PGN_01', 'F_PGN_02'],
+    #BIO: ['G_PEBIO_01', 'G_PEBIO_02'],
+    #GAS: ['G_PEGA_01', 'G_PEGA_02'],
+    #HYD: ['G_PEHI_01', 'G_PEHI_02'],
+    #REN: ['G_PEREN_01', 'G_PEREN_02'],
+    #TTP: ['G_PETE_01', 'G_PETE_02'],
+   # }
+  #FinalTechs: {
+    #TRNELC: ['J_TPBUSE_02', 'J_TPUTXEL_02', 'K_TPRMOEL_02', 'K_TPRVEEL_02', 'M_TRENPAEL_01', 'M_TRENPAEL_02', 'N_TCCLEL_02', 
+    #'O_TCCMEL_02', 'P_TCCPEL_02', 'Q_TRENCAEL_02'],
+    #TRNNGS: ['J_TPUBUSG_02', 'J_TPUTXGN_02', 'K_TPRVEGN_02', 'N_TCCLGN_02', 'O_TCCMGN_02', 'P_TCCPGN_02'],
+    #TRNHC: ['J_TPUBUSHC_01', 'J_TPUBUSHC_02', 'J_TPUTXHC_01', 'J_TPUTXHC_02', 'K_TPRMOHC_01', 'K_TPRMOHC_02', 'K_TPRVEHC_01',
+    #'K_TPRVEHC_02', 'M_TRENPAHC_01', 'N_TCCLHC_01', 'N_TCCLHC_02', 'O_TCCMHC_01', 'O_TCCMHC_02', 'P_TCCPHC_01', 'P_TCCPHC_02',
+    #'Q_TRENCAHC_01', 'Q_TRENCAHC_02'],
+    #OTHELC: ['I_DISTELECTR_01', 'I_DISTENERG_01']
+  #}
+  #SupplyTechs: ['B_PROD_01', 'B_PROD_02', 'C_IMPO_01', 'C_IMPO_02']
+  #Refineries: ['D_REFI_01', 'D_REFI_02']
+  #dayparts:
+   # D1: []
+    #daypart : [start_hour (inclusive), end_hour (exclusive)]
+  #seasons:
+   # S1: []
     #season : [month 1, month 2, ...] (all inclusive)

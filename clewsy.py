@@ -681,6 +681,7 @@ def BuildCLEWsModel(data, yaml_file):
                             
                              #If fuel is not electricity and is contained in the list of commodities
                             print("Hellooooo:"+ sector + fuel + country)
+
                             if not "SUP" + fuel + country + "XX" in [li['value'] for li in NewSetItems[SetNames.index("TECHNOLOGY")]]:
                                 AddActivityListItems(Years, Region, "SUP" + fuel + country + "XX" , fuel + "INT", IARList, "1", value = "1")
                                 AddActivityListItems(Years, Region, "SUP" + fuel + country + "XX" , fuel + country, IARList, "2", value = "1")
@@ -691,7 +692,9 @@ def BuildCLEWsModel(data, yaml_file):
                                 Fill_Set(NewSetItems, SetNames, "TECHNOLOGY", "DEM" + sector + fuel + country + "XX", "#000000", "")
                                 AddActivityListItems(Years, Region, "DEM" + sector + fuel + country + "XX" , fuel + country + "XX" , IARList, "1", value = "1")
                                 AddActivityListItems(Years, Region, "DEM" + sector + fuel + country + "XX" , sector + fuel + country + "XX" , OARList, "1", value = "1")
-                            if not fuel + country + "XX" in [li['value'] for li in NewSetItems[SetNames.index("COMMODITY")]]:
+                            if not fuel + country in [li['value'] for li in NewSetItems[SetNames.index("COMMODITY")]]:
+                                Fill_Set(NewSetItems, SetNames, "COMMODITY", fuel + country , "#000000", "")
+                            if not fuel + country + "XX" in [li['value'] for li in NewSetItems[SetNames.index("COMMODITY")]]:    
                                 Fill_Set(NewSetItems, SetNames, "COMMODITY", fuel + country + "XX", "#000000", "")
                             if not sector + fuel + country + "XX" in [li['value'] for li in NewSetItems[SetNames.index("COMMODITY")]]:
                                 Fill_Set(NewSetItems, SetNames, "COMMODITY", sector + fuel + country + "XX", "#000000", "")
