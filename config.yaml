@@ -1,5 +1,5 @@
 # Scenario Name 
-scenario: "CostaRicaNewOG"
+scenario: "05222025"
 
 # Temporal Parameters 
 startYear: 2022
@@ -20,11 +20,12 @@ timeshift: 0 # value between -11 and 12
   
 # Spatial Parameters 
 geographic_scope:
-  - "CRI"
+  - "COL"
+  - "ECU"
   
 
 # Set to True if transmission should be included
-crossborderTrade: False
+crossborderTrade: True
 
 # Set to True if existing transmission capacities should be included
 # from the Global Transmission Database (Brinkerink et al., 2024).
@@ -60,12 +61,14 @@ no_invest_technologies:
   - "BIO"
   - "PET"
   - "LDS"
+  - "STH"
+
 
 # Result Parameters 
 results_by_country: True
 
 # solver parameters
-solver: "gurobi" # cbc, cplex, gurobi
+solver: "cbc" # cbc, cplex, gurobi
 
 user_defined_capacity:
   # technology: [capacity, 
